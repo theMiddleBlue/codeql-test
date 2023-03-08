@@ -43,3 +43,17 @@ Analysis produced the following metric data:
 "This regular expression has an unescaped '.' before 'example.com/', so it might match more hosts than expected.",
 "/test.py","6","31","6","53"
 ```
+
+### Using the container
+to exec a shell inside the container and do stuff with codeql, you can run the container with the `--entrypoint` parameter:
+
+```shell
+docker run -ti --rm \
+    -v ${PWD}/results:/opt/results \
+    -v ${PWD}/app:/opt/app \
+    --entrypoint /bin/bash \
+    codeql:test
+
+cd /opt/codeql
+./codeql --help
+```
