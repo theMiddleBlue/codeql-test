@@ -1,0 +1,5 @@
+name: test
+groups: 
+  - python
+dependencies:
+  codeql/python-all: "*"
